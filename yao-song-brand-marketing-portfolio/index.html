@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yao Song - brand marketing portfolio" />
+    <title>Yao Song | Brand Marketing Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root { --ink:#20211f; --paper:#f2f1eb; --rule:#aaa9a0; --muted:#60615b; --blue:#184bb4; --gold:#d5a442; --wine:#542927; }
+      * { box-sizing:border-box; }
+      html, body { min-height:100%; margin:0; }
+      body { background:#d8d7cf; color:var(--ink); font-family:Manrope, sans-serif; }
+      .sheet { width:min(100vw,297mm); min-height:min(100vh,210mm); aspect-ratio:297/210; margin:0 auto; padding:4.4% 6.2% 3.6%; position:relative; overflow:hidden; background:var(--paper); }
+      .sheet::before { content:""; position:absolute; inset:0; opacity:.065; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E"); mix-blend-mode:multiply; }
+      header, .contact-bar, .cases, footer { position:relative; z-index:1; }
+      header { height:26%; display:grid; grid-template-columns:1.06fr 1fr; gap:8%; border-bottom:1px solid var(--ink); }
+      .kicker { margin:0 0 .7rem; font:500 clamp(.49rem,.63vw,.63rem)/1.2 "DM Mono", monospace; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); }
+      h1 { margin:0; font-size:clamp(3.1rem,6.1vw,6.1rem); font-weight:800; letter-spacing:-.105em; line-height:.73; }
+      h1 span { display:block; }
+      .header-copy { align-self:end; padding:0 0 1rem; font-size:clamp(.66rem,.87vw,.87rem); line-height:1.43; letter-spacing:-.028em; }
+      .header-copy p { margin:0; } .header-copy p + p { margin-top:.72rem; } strong { font-weight:800; }
+      .contact-bar { height:7.5%; display:flex; align-items:center; gap:.38rem .62rem; flex-wrap:wrap; border-bottom:1px solid var(--rule); color:var(--muted); font:400 clamp(.46rem,.59vw,.59rem)/1.25 "DM Mono", monospace; letter-spacing:.07em; text-transform:uppercase; }
+      .contact-bar .name { color:var(--ink); font-weight:500; } .contact-bar a, footer a { color:inherit; text-decoration:none; }
+      .cases { height:59.5%; display:grid; grid-template-columns:repeat(2,1fr); grid-template-rows:1.08fr .92fr; }
+      article { min-width:0; min-height:0; display:flex; flex-direction:column; padding:1rem 1.35rem 0; }
+      article:nth-child(odd) { padding-left:0; }
+      article:nth-child(even) { border-left:1px solid var(--rule); }
+      article:nth-child(n+3) { border-top:1px solid var(--rule); padding-top:1.02rem; }
+      .case-index { height:clamp(.54rem,.68vw,.68rem); margin:0 0 .38rem; font:500 clamp(.45rem,.57vw,.57rem)/1 "DM Mono", monospace; letter-spacing:.1em; color:var(--muted); }
+      .brand { height:clamp(1.35rem,2.35vw,2.35rem); display:flex; align-items:center; margin-bottom:.3rem; }
+      .brand img { display:block; max-width:82%; max-height:100%; object-fit:contain; object-position:left center; }
+      .brand-martell img { width:7.2rem; } .brand-supergoop img { width:6.65rem; } .brand-realisation img { width:4.4rem; } .brand-glencairn img { width:6.1rem; }
+      .case-type { height:2.5em; margin:0 0 .42rem; font:500 clamp(.47rem,.6vw,.6rem)/1.25 "DM Mono", monospace; letter-spacing:.075em; text-transform:uppercase; color:var(--muted); }
+      .case-link { width:fit-content; margin-bottom:.52rem; color:var(--ink); font:500 clamp(.46rem,.57vw,.57rem)/1 "DM Mono", monospace; text-decoration:none; border-bottom:1px solid var(--ink); padding-bottom:.18rem; }
+      .case-link:hover { color:var(--blue); border-color:var(--blue); }
+      ul { margin:0; padding:0; list-style:none; font-size:clamp(.5rem,.645vw,.645rem); line-height:1.34; letter-spacing:-.025em; }
+      li { position:relative; padding-left:.8rem; } li::before { content:""; position:absolute; width:.28rem; height:.28rem; left:0; top:.4rem; background:var(--ink); border-radius:50%; } li + li { margin-top:.25rem; }
+      article:nth-child(1) li::before { background:var(--gold); } article:nth-child(2) li::before { background:var(--wine); } article:nth-child(3) li::before { background:var(--blue); }
+      footer { height:7%; display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; color:var(--muted); font:400 clamp(.45rem,.57vw,.57rem)/1.25 "DM Mono", monospace; letter-spacing:.065em; text-transform:uppercase; }
+      footer .identity { color:var(--ink); } .footer-right { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.18rem .58rem; text-align:right; }
+      @media (max-width:760px) { body { background:var(--paper); } .sheet { width:100%; aspect-ratio:auto; min-height:100vh; padding:12% 8% 8%; } header { height:auto; min-height:44vh; grid-template-columns:1fr; gap:1rem; padding-bottom:1rem; } h1 { font-size:clamp(4rem,21vw,7.5rem); } .header-copy { align-self:auto; padding:0; font-size:1rem; } .contact-bar { height:auto; padding:1rem 0; font-size:.61rem; } .cases { height:auto; display:block; } article { min-height:20rem; padding:1.9rem 0; } article:nth-child(even) { border-left:0; } article:nth-child(n+2) { border-top:1px solid var(--rule); } article:nth-child(n+3) { padding-top:1.9rem; } ul { font-size:.83rem; } footer { height:auto; padding-top:1.5rem; align-items:flex-start; flex-direction:column; } .footer-right { justify-content:flex-start; text-align:left; } }
+      @media print { @page { size:A4 landscape; margin:0; } body { background:var(--paper); } .sheet { width:297mm; height:210mm; min-height:0; } }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header>
+        <div>
+          <p class="kicker">Brand Marketing Portfolio / 2026</p>
+          <h1><span>YAO</span><span>SONG</span></h1>
+        </div>
+        <div class="header-copy">
+          <p>I turn <strong>consumer, cultural and market intelligence</strong> into <strong>brand direction</strong>, helping global brands build relevance across markets through <strong>communications, activations and experiences</strong>.</p>
+          <p>Across agency and brand environments, I connect <strong>insight, strategic thinking and cross-market execution</strong> to shape work that is commercially useful and culturally resonant.</p>
+        </div>
+      </header>
+
+      <div class="contact-bar" aria-label="Contact details">
+        <span class="name">Yao Song</span><span>•</span><span>London, United Kingdom</span><span>•</span><a href="tel:+33743650660">+33 7 43 65 06 60</a><span>•</span><a href="mailto:yao.song819@gmail.com">yao.song819@gmail.com</a><span>•</span><a href="https://www.linkedin.com/in/songyao19">LinkedIn</a>
+      </div>
+
+      <section class="cases" aria-label="Selected brand marketing cases">
+        <article>
+          <p class="case-index">01 / CASE STUDY</p>
+          <div class="brand brand-martell"><img src="portfolio-assets/martell-logo.png" alt="Martell Cognac" /></div>
+          <p class="case-type">Cross-market cultural strategy</p>
+          <a class="case-link" href="https://www.martell.com/en/martell-afrobeats/">View case ↗</a>
+          <ul>
+            <li>Co-developed a <strong>global cultural partnership framework</strong> and <strong>market toolkit</strong> to guide multi-market rollout and align local teams around strategic priorities and activation principles.</li>
+            <li>Synthesised <strong>cultural, category, music industry and market intelligence</strong> into strategic inputs that informed the partnership framework.</li>
+            <li>Co-led <strong>cross-functional culture strategy workshops</strong>, bringing together markets, agencies and industry experts to align on cultural opportunities and activation direction.</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="case-index">02 / CASE STUDY</p>
+          <div class="brand brand-glencairn"><img src="portfolio-assets/glencairn-logo.png" alt="The Glencairn Glass" /></div>
+          <p class="case-type">Market entry &amp; brand education</p>
+          <a class="case-link" href="https://www.cbbc.org/news-insights/winners-china-britain-business-councils-2025-china-scotland-business-awards-announced">View award ↗</a>
+          <ul>
+            <li>Led <strong>China market entry</strong> through localized go-to-market and e-commerce launch strategy with the global brand team.</li>
+            <li>Partnered with the brand founder and a <strong>WSET-certified spirits lecturer</strong> to create <strong>brand education content</strong> for local audiences.</li>
+            <li>Helped translate category knowledge into a more accessible market-facing story, strengthening brand credibility and audience adoption.</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="case-index">03 / CASE STUDY</p>
+          <div class="brand brand-supergoop"><img src="portfolio-assets/supergoop-logo.png" alt="Supergoop!" /></div>
+          <p class="case-type">Consumer insight to market strategy</p>
+          <a class="case-link" href="https://www.youtube.com/watch?v=dUhHfZwpwAM">View case ↗</a>
+          <ul>
+            <li>Conducted <strong>consumer research, focus groups and social listening</strong> to identify audience needs, cultural barriers and opportunities for the brand in China.</li>
+            <li>Translated findings into strategic recommendations across <strong>brand positioning, target audience, campaign angle and creator strategy</strong>.</li>
+            <li>Built an integrated launch across <strong>paid amplification, creators and platform-native content</strong>, generating <strong>7M+ reach</strong> and exceeding campaign KPIs by <strong>91%</strong>.</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="case-index">04 / CASE STUDY</p>
+          <div class="brand brand-realisation"><img src="portfolio-assets/realisation-logo.png" alt="Réalisation" /></div>
+          <p class="case-type">Cultural localisation &amp; audience strategy</p>
+          <a class="case-link" href="https://www.vogue.com/article/how-realisation-par-turned-cult-appeal-into-commercial-momentum-in-china">View case ↗</a>
+          <ul>
+            <li><strong>Shaped a locally relevant positioning and audience strategy</strong> for China market entry.</li>
+            <li><strong>Built a tiered advocate and KOL strategy</strong>, activating <strong>150+ influencers</strong> across social channels and offline activations.</li>
+            <li><strong>Supported rapid market traction and product sell-out</strong> through platform-native storytelling.</li>
+          </ul>
+        </article>
+      </section>
+
+      <footer>
+        <span class="identity">Yao Song / London, United Kingdom</span>
+        <span class="footer-right"><a href="tel:+33743650660">+33 7 43 65 06 60</a><span>•</span><a href="mailto:yao.song819@gmail.com">yao.song819@gmail.com</a><span>•</span><a href="https://www.linkedin.com/in/songyao19">LinkedIn</a></span>
+      </footer>
+    </main>
+  </body>
+</html>
